@@ -5,16 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Gaurav Kanoujia</title>
 	<link rel = "stylesheet" href = "style.css">
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-	</style>
 </head>
 <body>
-	<nav class = "navbar">
-		<ul class = "navbar-bttn">
-			<li><span>About</span></li>
-			<li><span>Projects</span></li>
-			<li><span>Skills</span></li>
+	<nav id = "navbar">
+		<ul id = "navbar-bttn">
+			<li><a scroll-to = "About"><span>About</span></a></li>
+			<li><a scroll-to = "Projects"><span>Projects</span></a></li>
+			<li><a scroll-to = "Skills"><span>Skills</span></a></li>
 			<li><a class = "nav-img" href = "https://github.com/GauravKano" target = "_blank"> <img id = "github-img" src = "github.png" alt = "Git Hub Logo"></a></li>
 			<li><a class = "nav-img" href = "https://www.linkedin.com/in/gaurav-kanoujia/" target = "_blank"> <img id = "linkedin-img" src = "linkedin.png" alt = "Linkedin Logo"></a></li>
 			<li><a class = "nav-img" href = "Resume.pdf" target = "_blank"><img id = "resume-img" src = "resume.png" alt = "Image of a Paper Representing a Resume"></a></li>
@@ -53,7 +50,7 @@
 		<section id = "Projects">
 			<h1 id = "Project-Header"><span>Projects</span></h1>
 			<div id = "Project-Content">
-				<a href = ""><div class = "Project">
+				<a href = "#nav"><div class = "Project">
 					<div>
 						<h3 class = "Project-Name">Personal Portfolio |</h3>
 						<span class = "Project-Date">July 2024</span>
@@ -130,9 +127,22 @@
 						<img src = "javascript.png">
 						<span>JavaScript</span>
 					</div></li>
+					<li><div class = "Skill-Box">
+						<img src = "visual-studio-code .png">
+						<span>VS Code</span>
+					</div></li>
+					<li><div class = "Skill-Box">
+						<img src = "visual-studio.png">
+						<span>VS Ide</span>
+					</div></li>
+					<li><div class = "Skill-Box">
+						<img id = "eclipse" src = "eclipse.png">
+						<span>Eclipse</span>
+					</div></li>
 				</ul>
 		</section>
 	</div>
 
+	<script src = "scroll.js"></script>
 </body>
 </html>
