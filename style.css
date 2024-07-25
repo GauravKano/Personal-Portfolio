@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	/* overflow: hidden; */
+	color: #FFFFFF;
 }
 
 
@@ -16,7 +17,7 @@
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	background: linear-gradient(#e1e5f2, #A7BDEA);
+	background: #0D0B22
 }
 
 
@@ -26,19 +27,19 @@
 	box-sizing: border-box;
 	display: block;
 	padding: 12px 10px;
-	background-color: #FFFFFF;
+	background-color: #6767D9;
 	color: #22223b;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.748);
+	box-shadow: 0 0 15px #7127BA;
 }
 
 .navbar-bttn{
 	list-style: none;
 	display: flex;
-	max-width: 600px;
-	margin-left: auto;
 	justify-content: space-around;
 	align-items: center;
+	max-width: 600px;
+	margin-left: auto;
 }
 
 .navbar-bttn li{
@@ -67,12 +68,12 @@
 
 #Intro{
 	/* background-color: #E1E5F2; */
-	padding: 150px 8%;
+	padding: 150px 8% 100px 8%;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	gap: 50px;
+	gap: 9%;
 }
 
 #Intro-Text{
@@ -98,31 +99,31 @@
 	width: 350px;
 	border-radius: 50%; 
 	margin: 25px 0px;
-	box-shadow:  0px 0px 10px rgba(0, 0, 0, 0.463);
+	box-shadow:  0px 0px 15px #7127BA;
 }
 
 
 
 #About{
 	/* background-color: #bfdbf7; */
-	padding: 150px 8%;
+	padding: 150px 8% 100px 8%;
 }
 
 #About-Mac{
-	box-shadow:  0px 0px 30px rgba(0, 0, 0, 0.29);
-	border-radius: 5px;
+	box-shadow:  0px 0px 20px #7127BA;
+	border-radius: 13px;
 }
 
 #Mac-Header{
 	height: 17px;
-	background-color: #6C7F92;
-	padding: 5px;
+	background-color: #6767D9;
+	padding: 5px 7px;
 	border: 1px solid #232b2b;
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	border-top-left-radius:  5px;	
-	border-top-right-radius:  5px;	
+	border-top-left-radius:  13px;	
+	border-top-right-radius:  13px;	
 }
 
 .circle{
@@ -130,7 +131,7 @@
 	height: 10px;
 	width: 10px;
 	border-radius: 50%;
-	margin: 3px;
+	margin: 0px 4px;
 	box-shadow: 0 0 2px black;
 }
 
@@ -148,10 +149,10 @@
 
 
 #About-Text{
-	background-color: #869DB3;
+	background-color: #6767d930 ;
 	border: 1px solid #232b2b;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 13px;
+	border-bottom-right-radius: 13px;
 	padding: 50px 13% 80px 13%;
 	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
@@ -175,7 +176,7 @@
 
 #Projects{
 	/* background-color: #1f7a8c; */
-	padding: 150px 5%;
+	padding: 150px 5% 100px 5%;
 }
 
 #Project-Header{
@@ -200,14 +201,14 @@
 }
 
 .Project{
-	background-color: #869DB3;
+	background-color: #6767d930;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 30px;
 	border: 1px solid #232b2b;
 	border-radius: 5px;
-	box-shadow:  0px 0px 10px rgba(255, 255, 255, 0.344);
+	box-shadow:  0px 0px 10px #7127BA;
 	text-align: center;
 }
 
@@ -237,10 +238,12 @@
 }
 
 .Languages span{
-	background-color: #6C7F92;
+	border: 1px solid black;
+	box-shadow: 0 0 1px #7127BA;
+	background-color: #6767D998;
 	padding: 5px;
 	border-radius: 5px;
-	color: #22223b;
+	color: white;
 }
 
 
@@ -269,13 +272,13 @@
 	display: flex;
 	width: 100px;
 	height: 100px;
-	background-color: #255b6f;
+	background-color: #6767d930;
 	border-radius: 10px;
 	padding: 5px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	box-shadow: 0 0 10px white;
+	box-shadow: 0 0 10px #7127BA;
 }
 
 .Skill-Box img{
@@ -301,12 +304,18 @@
 	}
 }
 
+@media screen and (max-width: 1000px){
+	.navbar-bttn{
+		max-width: none;
+		/* justify-content: space-around; */
+	}
+}
+
 @media screen and (max-width: 760px){
 	#Project-Content a{
 		width: 90%;
 	}
 }
-
 
 @media screen and (max-width: 400px){
 	#Intro img{
