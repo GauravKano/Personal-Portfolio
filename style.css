@@ -199,6 +199,10 @@
 	gap: 50px 5%;
 }
 
+#personal-portfolio, #VolunTrack{
+	cursor: pointer;
+}
+
 #Project-Content a{
 	text-decoration: none;
 	width: 30%;
