@@ -10,7 +10,6 @@ import {
   FaCss3Alt,
   FaJava,
   FaJs,
-  FaC,
   FaPython,
   FaReact,
   FaFigma,
@@ -40,9 +39,15 @@ export default function Home() {
   const [aboutVisible, setAboutVisible] = useState(false);
   const navBar = useRef(null);
   const aboutSection = useRef(null);
+  const projectSection = useRef(null);
+  const skillSection = useRef(null);
 
   // Links in NavBar
-  const sections = ["About", "Projects", "Skills"];
+  const sections = [
+    { name: "About", ref: aboutSection },
+    { name: "Projects", ref: projectSection },
+    { name: "Skills", ref: skillSection },
+  ];
   const links = [
     {
       name: "Github",
@@ -75,6 +80,7 @@ export default function Home() {
       description:
         "A stylish and interactive portfolio showcasing my work and skills. It features a modern design, smooth navigation, and responsive layouts, providing a polished and engaging user experience.",
       languages: ["NextJs", "Tailwind CSS", "Vercel"],
+      url: "https://gauravkanou.vercel.app/",
     },
     {
       name: "CelebBot",
@@ -89,6 +95,7 @@ export default function Home() {
         "Firebase",
         "Vercel",
       ],
+      url: "https://celebbot.vercel.app/",
     },
     {
       name: "Party Manager",
@@ -96,6 +103,7 @@ export default function Home() {
       description:
         "An intuitive platform for managing pantry inventory. Users can add items, adjust quantities, and search their stock, while a streamlined interface ensures easy and efficient tracking for a well-organized kitchen.",
       languages: ["NextJs", "Material UI", "Firebase", "Vercel"],
+      url: "https://pantrymanager.vercel.app/",
     },
     {
       name: "VolunTrack",
@@ -103,6 +111,7 @@ export default function Home() {
       description:
         "Your essential tool for managing volunteer hours. Log, edit, and track your total hours effortlessly. Perfect for nonprofits and volunteers, VolunTrack keeps your contributions organized and easy to monitor.",
       languages: ["Python"],
+      url: "https://github.com/GauravKano/VolunTrack",
     },
     {
       name: "Seat Sync",
@@ -110,6 +119,7 @@ export default function Home() {
       description:
         "User-friendly tool for a hassle-free movie seat bookings. Effortlessly check seat availability, reserve your spot, and find out who’s sitting where—all with instant feedback to make your booking experience smooth and interactive",
       languages: ["C"],
+      url: "",
     },
     {
       name: "QueueMaster",
@@ -117,6 +127,7 @@ export default function Home() {
       description:
         "An efficient system for handling customer ticket requests. Users enter their details and ticket quantity, while an intelligent queue ensures smooth and organized processing for a better overall experience.",
       languages: ["C"],
+      url: "",
     },
   ];
   const skills = [
@@ -235,6 +246,32 @@ export default function Home() {
     }
   };
 
+  // Set Scroll Position Once Section is Clicked
+  const sectionClick = (section) => {
+    let offset;
+
+    // Choose Offset
+    if (
+      section.name === "About" &&
+      section.ref.current?.clientHeight < window.innerHeight
+    ) {
+      offset = (window.innerHeight - section.ref.current?.clientHeight) / 2; // Half of vh on top
+    } else {
+      offset = 50; // default
+    }
+
+    // Set Scroll Position
+    window.scrollTo({
+      top: section.ref.current?.offsetTop - offset,
+      behavior: "smooth",
+    });
+
+    // Close Menu if Open
+    if (menuDOM) {
+      handleMenuClose();
+    }
+  };
+
   return (
     <>
       {/* Nav Bar */}
@@ -245,8 +282,16 @@ export default function Home() {
         {/* Normal NavBar */}
         <div className="hidden md:flex justify-around lg:justify-end items-center gap-14 text-xl font-semibold w-full">
           {/* Sections in Portfolio */}
-          {sections.map((name, index) => (
-            <span key={index}>{name}</span>
+          {sections.map((section, index) => (
+            <span
+              key={index}
+              className="cursor-pointer"
+              onClick={() => {
+                sectionClick(section);
+              }}
+            >
+              {section.name}
+            </span>
           ))}
 
           {/* Outer Links */}
@@ -303,9 +348,15 @@ export default function Home() {
             {/* Menu Options */}
             <div className="flex flex-col justify-center items-center gap-8 text-xl font-semibold h-full">
               {/* Links to inside portfolio */}
-              {sections.map((name, index) => (
-                <span className="block" key={index}>
-                  {name}
+              {sections.map((section, index) => (
+                <span
+                  className="block cursor-pointer"
+                  key={index}
+                  onClick={() => {
+                    sectionClick(section);
+                  }}
+                >
+                  {section.name}
                 </span>
               ))}
 
@@ -391,49 +442,86 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Sections */}
+      {/* Projects Section */}
       <section className="flex flex-col justify-center items-center gap-14 pt-56">
         {/* Project Title */}
-        <h1 className="text-4xl font-semibold">Projects</h1>
+        <h1 className="text-4xl font-semibold" ref={projectSection}>
+          Projects
+        </h1>
         {/* Display Projects */}
         <div
           className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 justify-around gap-10 text-center text-balance"
           style={{ width: "85vw" }}
         >
-          {projects.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col justify-center items-center gap-3.5 bg-app-400 rounded-lg px-10 py-12"
-            >
-              {/* Title and Date */}
-              <div className="flex flex-col items-center gap-0.5">
-                <h3 className="inline-block text-2xl font-bold">{item.name}</h3>
-                <span className="text-base inline-block">{item.date}</span>
+          {projects.map((item, index) =>
+            item.url ? (
+              // Display If URL exists
+              <a key={index} href={item.url} target="_blank">
+                <div className="flex flex-col justify-center items-center gap-3.5 bg-app-400 rounded-lg w-full h-full px-10 py-12">
+                  {/* Title and Date */}
+                  <div className="flex flex-col items-center gap-0.5">
+                    <h3 className="inline-block text-2xl font-bold">
+                      {item.name}
+                    </h3>
+                    <span className="text-base inline-block">{item.date}</span>
+                  </div>
+                  {/* Divider */}
+                  <div className="w-11/12 h-0.5 bg-foreground opacity-50"></div>
+                  {/* Description */}
+                  <span className="mb-1 text-base">{item.description}</span>
+                  {/* Languages */}
+                  <div className="flex justify-center items-center flex-wrap gap-2 mb-1 mt-3">
+                    {item.languages.map((language, index) => (
+                      <span
+                        key={index}
+                        className="px-1.5 py-1 bg-app-350 rounded-md"
+                      >
+                        {language}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ) : (
+              // Display If No URL Exists
+              <div
+                key={index}
+                className="flex flex-col justify-center items-center gap-3.5 bg-app-400 rounded-lg w-full h-full px-10 py-12"
+              >
+                {/* Title and Date */}
+                <div className="flex flex-col items-center gap-0.5">
+                  <h3 className="inline-block text-2xl font-bold">
+                    {item.name}
+                  </h3>
+                  <span className="text-base inline-block">{item.date}</span>
+                </div>
+                {/* Divider */}
+                <div className="w-11/12 h-0.5 bg-foreground opacity-50"></div>
+                {/* Description */}
+                <span className="mb-1 text-base">{item.description}</span>
+                {/* Languages */}
+                <div className="flex justify-center items-center flex-wrap gap-2 mb-1 mt-3">
+                  {item.languages.map((language, index) => (
+                    <span
+                      key={index}
+                      className="px-1.5 py-1 bg-app-350 rounded-md"
+                    >
+                      {language}
+                    </span>
+                  ))}
+                </div>
               </div>
-              {/* Divider */}
-              <div className="w-11/12 h-0.5 bg-foreground opacity-50"></div>
-              {/* Description */}
-              <span className="mb-1 text-base">{item.description}</span>
-              {/* Languages */}
-              <div className="flex justify-center items-center flex-wrap gap-2 mb-1 mt-3">
-                {item.languages.map((language, index) => (
-                  <span
-                    key={index}
-                    className="px-1.5 py-1 bg-app-350 rounded-md"
-                  >
-                    {language}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </section>
 
       {/* Skills Section */}
-      <section className="flex flex-col justify-center items-center gap-14 pt-56 pb-32">
+      <section className="flex flex-col items-center gap-14 pt-56 pb-32 min-h-screen">
         {/* Skill Title */}
-        <h1 className="text-4xl font-semibold">Skills</h1>
+        <h1 className="text-4xl font-semibold" ref={skillSection}>
+          Skills
+        </h1>
         {/* Display Skills */}
         <div
           className="flex flex-wrap justify-center items-center gap-4"
