@@ -456,7 +456,12 @@ export default function Home() {
           {projects.map((item, index) =>
             item.url ? (
               // Display If URL exists
-              <a key={index} href={item.url} target="_blank">
+              <a
+                key={index}
+                href={item.url}
+                target="_blank"
+                aria-label={`${item.name} Link`}
+              >
                 <div className="flex flex-col justify-center items-center gap-3.5 bg-app-400 rounded-lg w-full h-full px-10 py-12">
                   {/* Title and Date */}
                   <div className="flex flex-col items-center gap-0.5">
