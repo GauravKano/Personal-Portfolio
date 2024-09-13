@@ -6,7 +6,31 @@ import {
   FaFileLines,
   FaBars,
   FaXmark,
+  FaHtml5,
+  FaCss3Alt,
+  FaJava,
+  FaJs,
+  FaC,
+  FaPython,
+  FaReact,
+  FaFigma,
+  FaNodeJs,
+  FaDocker,
+  FaUbuntu,
 } from "react-icons/fa6";
+import {
+  RiFirebaseFill,
+  RiNextjsFill,
+  RiTailwindCssFill,
+} from "react-icons/ri";
+import {
+  SiEclipseide,
+  SiMilvus,
+  SiOpenai,
+  SiPostman,
+  SiVercel,
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
 export default function Home() {
   const [menuDOM, setMenuDOM] = useState(false); // Menu showing in DOM
@@ -95,6 +119,28 @@ export default function Home() {
       languages: ["C"],
     },
   ];
+  const skills = [
+    { name: "NextJS", src: RiNextjsFill },
+    { name: "Tailwind", src: RiTailwindCssFill },
+    { name: "React", src: FaReact },
+    { name: "Firebase", src: RiFirebaseFill },
+    { name: "Milvus", src: SiMilvus },
+    { name: "OpenAI API", src: SiOpenai },
+    { name: "NodeJS", src: FaNodeJs },
+    { name: "Python", src: FaPython },
+    { name: "Java", src: FaJava },
+    { name: "HTML", src: FaHtml5 },
+    { name: "CSS", src: FaCss3Alt },
+    { name: "JavaScript", src: FaJs },
+    { name: "Vercel", src: SiVercel },
+    { name: "VsCode", src: VscVscode },
+    { name: "Figma", src: FaFigma },
+    { name: "Github", src: FaGithub },
+    { name: "Eclipse", src: SiEclipseide },
+    { name: "Postnan", src: SiPostman },
+    { name: "Ubuntu", src: FaUbuntu },
+    { name: "Docker", src: FaDocker },
+  ];
 
   // Set the Mobile View State using listener
   useEffect(() => {
@@ -149,18 +195,21 @@ export default function Home() {
       const entry = entries[0];
       if (entry.isIntersecting) {
         setAboutVisible(true);
-        observer.unobserve(aboutSection.current);
+        observer.unobserve(aboutSection.current); // Remove observer from further use
       }
     };
 
+    // create observers
     const observer = new IntersectionObserver(handleAnimation, {
       threshold: isMobile ? 0.275 : 0.375,
     });
 
+    // Add observer
     if (aboutSection.current) {
       observer.observe(aboutSection.current);
     }
 
+    // Remove observer on dismount
     return () => {
       if (aboutSection.current) {
         observer.unobserve(aboutSection.current);
@@ -362,7 +411,7 @@ export default function Home() {
                 <span className="text-base inline-block">{item.date}</span>
               </div>
               {/* Divider */}
-              <div className="w-11/12 h-0.5 bg-white opacity-50"></div>
+              <div className="w-11/12 h-0.5 bg-foreground opacity-50"></div>
               {/* Description */}
               <span className="mb-1 text-base">{item.description}</span>
               {/* Languages */}
@@ -381,13 +430,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex justify-center items-center gap-14 pt-56">
+      {/* Skills Section */}
+      <section className="flex flex-col justify-center items-center gap-14 pt-56 pb-32">
+        {/* Skill Title */}
         <h1 className="text-4xl font-semibold">Skills</h1>
+        {/* Display Skills */}
         <div
           className="flex flex-wrap justify-center items-center gap-4"
           style={{ width: "80vw" }}
         >
-          {" "}
+          {skills.map((skill, index) => {
+            const Icon = skill.src;
+            return (
+              <div
+                key={index}
+                className="flex flex-col justify-center items-center gap-2 w-26 h-26 pt-4 pb-3 bg-app-400 rounded-lg "
+              >
+                {/* Skill Logo */}
+                <Icon
+                  className="w-12 h-12 text-foreground"
+                  aria-label={`${skill.name} Logo`}
+                />
+                {/* Skill Name */}
+                <span className="text-sm">{skill.name}</span>
+              </div>
+            );
+          })}
         </div>
       </section>
     </>

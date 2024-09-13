@@ -32,8 +32,7 @@ module.exports = {
         },
         popOut: {
           "0%": { transform: "scale(0)", opacity: "0%" },
-          "50%": { opacity: "100%" },
-          "80%": { transform: "scale(1.1)" },
+          "80%": { opacity: "100%" },
           "100%": { transform: "scale(1)" },
         },
       },
@@ -45,11 +44,9 @@ module.exports = {
       spacing: {
         "10p": "10%",
         "12p": "12%",
-        "25vh": "25vh",
-        "15vh": "20vh",
+        26: "6.5rem",
       },
       screens: {
-        mobile: { raw: "(min-height: 750px)" },
         tall: { raw: "(min-height: 900px)" },
       },
     },
