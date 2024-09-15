@@ -9,7 +9,11 @@ const About = ({ message, aboutRef, isMobile }) => {
 
   return (
     // About Section
-    <section className="flex justify-center items-center box-border pt-40 tall:pt-36">
+    <section
+      className={`flex justify-center items-center box-border ${
+        isMobile ? "pt-40" : "pt-28"
+      } tall:pt-36`}
+    >
       <div
         ref={aboutRef}
         style={{
