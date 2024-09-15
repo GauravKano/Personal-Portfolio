@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 const About = ({ message, aboutRef, isMobile }) => {
   const inView = useInView(aboutRef, {
     once: true,
-    amount: 0.2,
+    amount: isMobile ? 0.2 : 0.3,
   });
 
   return (
