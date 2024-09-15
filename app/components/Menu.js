@@ -1,5 +1,6 @@
 import React from "react";
 import { FaXmark } from "react-icons/fa6";
+import { easeIn, easeOut, motion } from "framer-motion";
 
 const Menu = ({
   handleMenuClose,
@@ -19,11 +20,12 @@ const Menu = ({
         ></div>
 
         {/* Display the Drawer styled Menu */}
-        <div
-          className={`md:hidden fixed top-0 right-0 z-50 max-w-80 w-3/4 h-screen overflow-y-auto p-4 bg-app-500 text-foreground shadow-light-purple ${
-            displayMenu ? "animate-slide-right-in" : "animate-slide-right-out"
-          } `}
-          onAnimationEnd={removeMenuDOM}
+        <motion.div
+          className="md:hidden fixed top-0 right-0 z-50 max-w-80 w-3/4 h-screen overflow-y-auto p-4 bg-app-500 text-foreground shadow-light-purple"
+          onAnimationComplete={removeMenuDOM}
+          initial={{ translateX: "100%" }}
+          animate={displayMenu ? { translateX: "0%" } : {}}
+          transition={{ duration: 0.3 }}
         >
           {/* Close Button */}
           <button
@@ -66,7 +68,7 @@ const Menu = ({
               })}
             </div>
           </div>
-        </div>
+        </motion.div>
       </>
     </>
   );
