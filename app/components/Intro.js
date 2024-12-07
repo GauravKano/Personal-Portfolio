@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
 const Intro = ({ height }) => {
   return (
@@ -23,9 +23,10 @@ const Intro = ({ height }) => {
 
         {/* Image of Me */}
         <img
-          src="/imgs/me.jpg"
+          src="/imgs/avatarMe.jpg"
           alt="Picture of Gaurav"
-          className="rounded-full max-w-80"
+          className="max-w-80 rounded-full"
+          title="Made by: Makowka Picrew"
           style={{ width: "75vw" }}
         />
       </div>

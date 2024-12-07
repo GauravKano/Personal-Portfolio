@@ -31,10 +31,7 @@ const Projects = ({ projectRef, projects }) => {
         Projects
       </motion.h1>
       {/* Display Projects */}
-      <div
-        className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 justify-around gap-10 text-center text-balance"
-        style={{ width: "85vw" }}
-      >
+      <div className="w-[85vw] 2xl:w-[90vw] flex flex-row flex-wrap content-stretch justify-center gap-10 2xl:gap-9 text-balance text-center">
         {projects.map((item, index) => {
           return (
             <ProjectCard

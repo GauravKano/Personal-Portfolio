@@ -48,8 +48,13 @@ const ProjectCard = ({ item, inView, delay, viewportEnter, animationEnd }) => {
 
   return (
     // Display If URL exists
-    <Wrapper ref={ref} {...elementProps} {...animationProps}>
-      <div className="flex flex-col justify-center items-center gap-3.5 bg-app-400 rounded-lg w-full h-full px-10 py-12">
+    <Wrapper
+      ref={ref}
+      {...elementProps}
+      {...animationProps}
+      className="w-full lg:w-[calc((100%/2)-20px)] 2xl:w-[calc((100%/3)-24px)] min-h-full"
+    >
+      <div className="min-h-full flex flex-col justify-center items-center gap-3.5 bg-app-400 rounded-lg w-full px-10 py-12">
         {/* Title and Date */}
         <div className="flex flex-col items-center gap-0.5">
           <h3 className="inline-block text-2xl font-bold">{item.name}</h3>

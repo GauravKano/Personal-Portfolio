@@ -76,6 +76,21 @@ const projects = [
     url: "https://gauravkanou.vercel.app/",
   },
   {
+    name: "QuickFlash",
+    date: "July 2024",
+    description:
+      "Tool for quickly generating and managing flashcards from simple prompts. Organize, edit, or add to your sets through an intuitive dashboard designed for personalized learning.",
+    languages: [
+      "NextJs",
+      "Material UI",
+      "GROQ",
+      "Llama API",
+      "Firebase",
+      "Vercel",
+    ],
+    url: "https://quickflash.vercel.app/",
+  },
+  {
     name: "CelebBot",
     date: "August 2024",
     description:
@@ -91,7 +106,23 @@ const projects = [
     url: "https://celebbot.vercel.app/",
   },
   {
-    name: "Party Manager",
+    name: "Profspective",
+    date: "August 2024",
+    description:
+      "Streamlined platform for browsing professor reviews and selecting the best classes. Designed as an improved alternative to Rate My Professor, it focuses on clarity, reliability, and ease of use.",
+    languages: [
+      "NextJs",
+      "Material UI",
+      "Milvus",
+      "GROQ",
+      "Llama API",
+      "Zillis Cloud",
+      "Vercel",
+    ],
+    url: "https://profspective.vercel.app/",
+  },
+  {
+    name: "Pantry Manager",
     date: "August 2024",
     description:
       "An intuitive platform for managing pantry inventory. Users can add items, adjust quantities, and search their stock, while a streamlined interface ensures easy and efficient tracking for a well-organized kitchen.",

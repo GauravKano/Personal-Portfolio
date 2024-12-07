@@ -11,7 +11,7 @@ const Navbar = ({
   return (
     // Nav Bar
     <nav
-      className="bg-app-300 w-full px-6 py-3 flex justify-end text-foreground shadow-light-nav-purple"
+      className="bg-app-300 w-full px-6 py-3.5 flex justify-end text-foreground shadow-light-nav-purple"
       ref={navBarRef}
     >
       {/* Normal NavBar */}
