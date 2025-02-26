@@ -14,7 +14,7 @@ const Skills = ({ skills, skillRef }) => {
 
   return (
     // Skills Section
-    <section className="flex flex-col items-center gap-14 pt-56 pb-32 min-h-screen">
+    <section className="flex flex-col items-center gap-14 pt-56 pb-32">
       {/* Skill Title */}
       <motion.h1
         className="text-4xl font-semibold"

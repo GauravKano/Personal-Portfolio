@@ -68,14 +68,6 @@ const aboutMessage = [
 // Projects Info
 const projects = [
   {
-    name: "Personal Portfolio",
-    date: "July 2024",
-    description:
-      "A stylish and interactive portfolio showcasing my work and skills. It features a modern design, smooth navigation, and responsive layouts, providing a polished and engaging user experience.",
-    languages: ["NextJs", "Tailwind CSS", "Vercel"],
-    url: "https://gauravkanou.vercel.app/",
-  },
-  {
     name: "QuickFlash",
     date: "July 2024",
     description:
@@ -88,7 +80,8 @@ const projects = [
       "Firebase",
       "Vercel",
     ],
-    url: "https://quickflash.vercel.app/",
+    deployLink: "https://quickflash.vercel.app/",
+    githubLink: "https://github.com/GauravKano/QuickFlash",
   },
   {
     name: "CelebBot",
@@ -103,7 +96,8 @@ const projects = [
       "Firebase",
       "Vercel",
     ],
-    url: "https://celebbot.vercel.app/",
+    deployLink: "https://celebbot.vercel.app/",
+    githubLink: "https://github.com/GauravKano/CelebBot",
   },
   {
     name: "Profspective",
@@ -119,7 +113,8 @@ const projects = [
       "Zillis Cloud",
       "Vercel",
     ],
-    url: "https://profspective.vercel.app/",
+    deployLink: "https://profspective.vercel.app/",
+    githubLink: "https://github.com/hemkan/profspective",
   },
   {
     name: "Pantry Manager",
@@ -127,7 +122,8 @@ const projects = [
     description:
       "An intuitive platform for managing pantry inventory. Users can add items, adjust quantities, and search their stock, while a streamlined interface ensures easy and efficient tracking for a well-organized kitchen.",
     languages: ["NextJs", "Material UI", "Firebase", "Vercel"],
-    url: "https://pantrymanager.vercel.app/",
+    deployLink: "https://pantrymanager.vercel.app/",
+    githubLink: "https://github.com/GauravKano/Pantry-Manager",
   },
   {
     name: "VolunTrack",
@@ -135,23 +131,7 @@ const projects = [
     description:
       "Your essential tool for managing volunteer hours. Log, edit, and track your total hours effortlessly. Perfect for nonprofits and volunteers, VolunTrack keeps your contributions organized and easy to monitor.",
     languages: ["Python"],
-    url: "https://github.com/GauravKano/VolunTrack",
-  },
-  {
-    name: "Seat Sync",
-    date: "Jan 2024",
-    description:
-      "User-friendly tool for a hassle-free movie seat bookings. Effortlessly check seat availability, reserve your spot, and find out who’s sitting where—all with instant feedback to make your booking experience smooth and interactive",
-    languages: ["C"],
-    url: "",
-  },
-  {
-    name: "QueueMaster",
-    date: "Feb 2024",
-    description:
-      "An efficient system for handling customer ticket requests. Users enter their details and ticket quantity, while an intelligent queue ensures smooth and organized processing for a better overall experience.",
-    languages: ["C"],
-    url: "",
+    githubLink: "https://github.com/GauravKano/VolunTrack",
   },
 ];
 

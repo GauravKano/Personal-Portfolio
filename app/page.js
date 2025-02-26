@@ -129,7 +129,6 @@ export default function Home() {
         handleMenuOpen={handleMenuOpen}
       />
 
-      {/* Display Menu */}
       {menuDOM && (
         <Menu
           handleMenuClose={handleMenuClose}

@@ -2,11 +2,13 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { animationEnd, calcDelay } from "../util/staggerAnimation";
 import ProjectCard from "./ProjectCard";
+import ProjectModal from "./ProjectModal";
 
 const Projects = ({ projectRef, projects }) => {
   const currAnimation = useRef(0);
   const [delays, setDelays] = useState({});
   const [inView, setInView] = useState({});
+  const [modalProject, setModalProject] = useState(null);
 
   const onViewportEnter = (index) => {
     if (!inView[index]) {
@@ -14,6 +16,11 @@ const Projects = ({ projectRef, projects }) => {
       setDelays((prev) => ({ ...prev, [index]: delay }));
       setInView((prev) => ({ ...prev, [index]: true }));
     }
+  };
+
+  const closeProjectModal = () => {
+    setModalProject(null);
+    document.querySelector("body").style.overflow = "visible";
   };
 
   return (
@@ -45,10 +52,18 @@ const Projects = ({ projectRef, projects }) => {
               animationEnd={() => {
                 animationEnd(currAnimation);
               }}
+              openModal={() => {
+                setModalProject(item);
+                document.querySelector("body").style.overflow = "hidden";
+              }}
             />
           );
         })}
       </div>
+
+      {modalProject && (
+        <ProjectModal project={modalProject} closeModal={closeProjectModal} />
+      )}
     </section>
   );
 };

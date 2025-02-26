@@ -16,6 +16,7 @@ module.exports = {
         "app-300": "#6767D9", // Nav Bar Color
         "app-400": "#1d1c44",
         "app-500": "rgb(21 19 52)", // Menu Color
+        "app-375": "#2E2D72",
       },
       boxShadow: {
         "light-nav-purple": "0 3px 20px #7127BA", // Navbar

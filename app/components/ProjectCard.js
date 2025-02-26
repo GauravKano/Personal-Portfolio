@@ -1,7 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-const ProjectCard = ({ item, inView, delay, viewportEnter, animationEnd }) => {
+const ProjectCard = ({
+  item,
+  inView,
+  delay,
+  viewportEnter,
+  animationEnd,
+  openModal,
+}) => {
   const [threshold, setThreshold] = useState(0.15);
   const ref = useRef(null);
 
@@ -39,41 +46,31 @@ const ProjectCard = ({ item, inView, delay, viewportEnter, animationEnd }) => {
     onAnimationComplete: animationEnd,
   };
 
-  const Wrapper = item.url ? motion.a : motion.div;
-  const elementProps = {
-    href: item.url,
-    target: "_blank",
-    "aria-label": `${item.name} Link`,
-  };
-
   return (
-    // Display If URL exists
-    <Wrapper
+    <motion.div
       ref={ref}
-      {...elementProps}
       {...animationProps}
-      className="w-full lg:w-[calc((100%/2)-20px)] 2xl:w-[calc((100%/3)-24px)] min-h-full"
+      className="w-full lg:w-[calc((100%/2)-20px)] 2xl:w-[calc((100%/3)-24px)] min-h-full cursor-pointer flex flex-col justify-center items-center gap-3.5 bg-app-400 rounded-lg px-10 py-12"
+      onClick={openModal}
     >
-      <div className="min-h-full flex flex-col justify-center items-center gap-3.5 bg-app-400 rounded-lg w-full px-10 py-12">
-        {/* Title and Date */}
-        <div className="flex flex-col items-center gap-0.5">
-          <h3 className="inline-block text-2xl font-bold">{item.name}</h3>
-          <span className="text-base inline-block">{item.date}</span>
-        </div>
-        {/* Divider */}
-        <div className="w-11/12 h-0.5 bg-foreground opacity-50"></div>
-        {/* Description */}
-        <span className="mb-1 text-base">{item.description}</span>
-        {/* Languages */}
-        <div className="flex justify-center items-center flex-wrap gap-2 mb-1 mt-3">
-          {item.languages.map((language, index) => (
-            <span key={index} className="px-1.5 py-1 bg-app-350 rounded-md">
-              {language}
-            </span>
-          ))}
-        </div>
+      {/* Title and Date */}
+      <div className="flex flex-col items-center gap-0.5">
+        <h3 className="inline-block text-2xl font-bold">{item.name}</h3>
+        <span className="text-base inline-block">{item.date}</span>
       </div>
-    </Wrapper>
+      {/* Divider */}
+      <div className="w-11/12 h-0.5 bg-foreground opacity-50"></div>
+      {/* Description */}
+      <span className="mb-1 text-base">{item.description}</span>
+      {/* Languages */}
+      <div className="flex justify-center items-center flex-wrap gap-2 mb-2.5 mt-3">
+        {item.languages.map((language, index) => (
+          <span key={index} className="px-1.5 py-1 bg-app-350 rounded-md">
+            {language}
+          </span>
+        ))}
+      </div>
+    </motion.div>
   );
 };
 

@@ -4,7 +4,7 @@ const Intro = ({ height }) => {
   return (
     // Intro Section
     <section
-      className="flex justify-center items-center"
+      className="flex justify-center items-center py-10"
       style={{
         minHeight: height,
       }}
