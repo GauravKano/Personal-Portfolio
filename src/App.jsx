@@ -9,7 +9,7 @@ import Skills from "./components/Skills";
 
 import { sectionInfo, links, aboutMessage, projects, skills } from "./Info";
 
-export default function Home() {
+function App() {
   //init Ref to Sections
   const aboutSection = useRef(null);
   const projectSection = useRef(null);
@@ -154,3 +154,5 @@ export default function Home() {
     </>
   );
 }
+
+export default App;
