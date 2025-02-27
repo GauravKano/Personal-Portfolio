@@ -1,5 +1,4 @@
 import React from "react";
-
 import { FaXmark, FaGithub, FaLink } from "react-icons/fa6";
 
 const ProjectModal = ({ project, closeModal }) => {
@@ -21,7 +20,7 @@ const ProjectModal = ({ project, closeModal }) => {
         </button>
 
         <div className="flex flex-col gap-1 items-start">
-          <h2 className="text-2xl font-bold">{project.name}</h2>
+          <h4 className="text-2xl font-bold">{project.name}</h4>
           <span className="text-base">{project.date}</span>
           <div className="flex flex-wrap items-center gap-2 mt-1">
             {project.languages.map((language, index) => (

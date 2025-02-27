@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 
 const Intro = ({ height }) => {
   return (
@@ -23,7 +23,7 @@ const Intro = ({ height }) => {
 
         {/* Image of Me */}
         <img
-          src="/imgs/avatarMe.jpg"
+          src="/imgs/avatarMe.webp"
           alt="Picture of Gaurav"
           className="max-w-80 rounded-full"
           title="Made by: Makowka Picrew"

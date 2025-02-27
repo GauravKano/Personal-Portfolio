@@ -1,6 +1,6 @@
 import React from "react";
 import { FaXmark } from "react-icons/fa6";
-import { easeIn, easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Menu = ({
   handleMenuClose,
@@ -15,7 +15,7 @@ const Menu = ({
       <>
         {/* Black out Background */}
         <div
-          className="md:hidden fixed top-0 left-0 w-screen h-screen z-30 opacity-50 bg-slate-950"
+          className="md:hidden fixed top-0 left-0 w-screen h-screen z-30 opacity-85 bg-slate-950"
           onClick={handleMenuClose}
         ></div>
 
