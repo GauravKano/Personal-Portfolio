@@ -24,7 +24,7 @@ function App() {
   const [menuDOM, setMenuDOM] = useState(false); // Menu showing in DOM
   const [displayMenu, setDisplayMenu] = useState(false); // Display the Menu
   const [isMobile, setIsMobile] = useState(false); // Mobile View
-  const [homeHeight, setHomeHeight] = useState("calc(100vh - 56px)"); // Height of Intro Page
+  const [homeHeight, setHomeHeight] = useState("calc(100dvh - 56px)"); // Height of Intro Page
   const navBar = useRef(null);
 
   // Set the Mobile View State using listener
@@ -54,7 +54,7 @@ function App() {
   useEffect(() => {
     const handleHomeHeight = () => {
       const navBarHeight = navBar.current?.clientHeight || 0;
-      setHomeHeight(`calc(100vh - ${navBarHeight}px)`);
+      setHomeHeight(`calc(100dvh - ${navBarHeight}px)`);
     };
 
     // create observer

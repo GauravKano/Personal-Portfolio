@@ -15,13 +15,13 @@ const Menu = ({
       <>
         {/* Black out Background */}
         <div
-          className="md:hidden fixed top-0 left-0 w-screen h-screen z-30 opacity-85 bg-slate-950"
+          className="md:hidden fixed top-0 left-0 w-screen h-dvh z-30 opacity-85 bg-slate-950"
           onClick={handleMenuClose}
         ></div>
 
         {/* Display the Drawer styled Menu */}
         <motion.div
-          className="md:hidden fixed top-0 right-0 z-50 max-w-80 w-3/4 h-screen overflow-y-auto p-4 bg-app-500 text-foreground shadow-light-purple"
+          className="md:hidden fixed top-0 right-0 z-50 max-w-80 w-3/4 h-dvh overflow-y-auto p-4 bg-app-500 text-foreground shadow-light-purple"
           onAnimationComplete={removeMenuDOM}
           initial={{ translateX: "100%" }}
           animate={displayMenu ? { translateX: "0%" } : {}}
