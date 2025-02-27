@@ -55,7 +55,7 @@ const ProjectCard = ({
     >
       {/* Title and Date */}
       <div className="flex flex-col items-center gap-0.5">
-        <h3 className="inline-block text-2xl font-bold">{item.name}</h3>
+        <span className="inline-block text-2xl font-bold">{item.name}</span>
         <span className="text-base inline-block">{item.date}</span>
       </div>
       {/* Divider */}
